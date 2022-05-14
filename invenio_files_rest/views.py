@@ -271,8 +271,8 @@ def ensure_input_stream_is_not_exhausted(f):
     """Make sure that the input stream has not been read already."""
     @wraps(f)
     def decorate(*args, **kwargs):
-        if request.content_length and request.stream.is_exhausted:
-            raise ExhaustedStreamError()
+        # if request.content_length and request.stream.is_exhausted:
+        #     raise ExhaustedStreamError()
         return f(*args, **kwargs)
     return decorate
 
